@@ -66,7 +66,8 @@ $.ajax({
      } else {
       people.push({
         name: name,
-        image: image
+        image: image,
+        preload: (new Image().src = image)
       }); 
      }
    });
