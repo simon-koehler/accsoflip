@@ -32,8 +32,16 @@ function setImage() {
 }
 
 function loadNext() {
-  var index = Math.floor(Math.random()*people.length);
-  currentPerson = people[index];
+  if(people.length === 0) {
+    currentPerson = {
+        name: 'Cody',
+        image : 'http://accso.de/app/uploads/2016/04/Platzhalter.jpg'
+    }
+  } else {
+    var index = Math.floor(Math.random()*people.length);
+    currentPerson = people[index];
+    people.splice(index, 1);
+  }
 }
 
 $.ajax({
