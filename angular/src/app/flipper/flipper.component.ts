@@ -16,8 +16,7 @@ export class FlipperComponent implements OnInit {
 
   private people = Array<Person>();
   private placeholder = 'http://accso.de/app/uploads/2016/04/Platzhalter.jpg';
-  private cody = new Person('Cody', this.placeholder);
-  private currentPerson = this.cody; // for internal use. no bindings on it
+  private currentPerson = new Person('Cody', this.placeholder); // for internal use. no bindings on it
 
   name = this.currentPerson.name; // for bindings. it is required that the name is not printed instantly when the currentPerson changes!
   image = this.currentPerson.image; // for bindings

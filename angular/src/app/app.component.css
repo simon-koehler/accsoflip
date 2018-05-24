@@ -4,10 +4,11 @@ accso green 00ca75
 accso grey 1b1b2d
 */
 
-body {
+.content {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: white;
   text-align: center;
+  padding: 20px;
   background: #1b1b2d;
 }
 
