@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:gh": "ng build --prod --base-href \"https://simon-koehler.github.io/accsoflip/a/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e --port 14200"
