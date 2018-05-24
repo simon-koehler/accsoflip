@@ -1,14 +1,14 @@
 {
   "configVersion": 1,
-  "index": "http://locahost:4300/index.html",
+  "index": "https://simon-koehler.github.io/accsoflip/ng/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "http://locahost:4300/favicon.ico",
-        "http://locahost:4300/index.html"
+        "https://simon-koehler.github.io/accsoflip/ng/favicon.ico",
+        "https://simon-koehler.github.io/accsoflip/ng/index.html"
       ],
       "patterns": []
     },
@@ -17,30 +17,30 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
-        "http://locahost:4300/assets/icons/icon-128x128.png",
-        "http://locahost:4300/assets/icons/icon-144x144.png",
-        "http://locahost:4300/assets/icons/icon-152x152.png",
-        "http://locahost:4300/assets/icons/icon-192x192.png",
-        "http://locahost:4300/assets/icons/icon-384x384.png",
-        "http://locahost:4300/assets/icons/icon-512x512.png",
-        "http://locahost:4300/assets/icons/icon-72x72.png",
-        "http://locahost:4300/assets/icons/icon-96x96.png"
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-128x128.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-144x144.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-152x152.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-192x192.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-384x384.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-512x512.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-72x72.png",
+        "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "http://locahost:4300/assets/icons/icon-128x128.png": "c72e6b9cc04d72f49d8b55f07e2605dd24985249",
-    "http://locahost:4300/assets/icons/icon-144x144.png": "e24aafe326e727d051590fffaf2b3e7870b8606d",
-    "http://locahost:4300/assets/icons/icon-152x152.png": "0a2dd650c170b53efe43a945664ef23150340217",
-    "http://locahost:4300/assets/icons/icon-192x192.png": "3ebdb4e6344c7c4493063d0fde408e94016976ed",
-    "http://locahost:4300/assets/icons/icon-384x384.png": "950ae7e402c16fc7bf4ddf64395b523ea3263acd",
-    "http://locahost:4300/assets/icons/icon-512x512.png": "cc4f2a00c7c0df7db88c047a681c76faac114932",
-    "http://locahost:4300/assets/icons/icon-72x72.png": "1857c9b7c63d88548fe0e8c259146cad33251b6b",
-    "http://locahost:4300/assets/icons/icon-96x96.png": "062c0f8639d7615aef41787060a3dc047f29aad5",
-    "http://locahost:4300/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "http://locahost:4300/index.html": "d64039ce65d80df5da02271a27612b6b830931f8"
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-128x128.png": "c72e6b9cc04d72f49d8b55f07e2605dd24985249",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-144x144.png": "e24aafe326e727d051590fffaf2b3e7870b8606d",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-152x152.png": "0a2dd650c170b53efe43a945664ef23150340217",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-192x192.png": "3ebdb4e6344c7c4493063d0fde408e94016976ed",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-384x384.png": "950ae7e402c16fc7bf4ddf64395b523ea3263acd",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-512x512.png": "cc4f2a00c7c0df7db88c047a681c76faac114932",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-72x72.png": "1857c9b7c63d88548fe0e8c259146cad33251b6b",
+    "https://simon-koehler.github.io/accsoflip/ng/assets/icons/icon-96x96.png": "062c0f8639d7615aef41787060a3dc047f29aad5",
+    "https://simon-koehler.github.io/accsoflip/ng/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://simon-koehler.github.io/accsoflip/ng/index.html": "5b3729e1f667f4e8f83041acaeed8bf68e7ed16d"
   },
   "navigationUrls": [
     {
