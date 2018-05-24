@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:gh": "ng build --prod --base-href \"https://simon-koehler.github.io/accsoflip/a/\"",
+    "build:gh": "ng build --prod --base-href \"https://simon-koehler.github.io/accsoflip/ng/\"",
     "build:local": "ng build --prod --base-href \"http://locahost:4300/\"",
     "test": "ng test",
     "lint": "ng lint",
