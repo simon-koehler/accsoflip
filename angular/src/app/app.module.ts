@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 import {FlipperComponent} from './flipper/flipper.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { InstallListenerComponent } from './install-listener/install-listener.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlipperComponent
+    FlipperComponent,
+    InstallListenerComponent
   ],
   imports: [
     BrowserModule,
