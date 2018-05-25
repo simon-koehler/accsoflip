@@ -4,7 +4,7 @@
   "theme_color": "#00ca75",
   "background_color": "#1b1b2d",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/accsoflip/",
   "start_url": "/accsoflip/index.html",
   "icons": [
     {
