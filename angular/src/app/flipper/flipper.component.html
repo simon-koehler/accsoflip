@@ -1,9 +1,0 @@
-<div (click)="onClick()" class="card {{frontVisible ? '' : 'flipped'}}">
-  <figure class="front">
-    <img class="picture" src="{{image}}"/>
-    <img class="loader" [hidden]="!showLoading" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/>
-  </figure>
-  <figure class="back">
-    <div>{{name}}</div>
-  </figure>
-</div>
