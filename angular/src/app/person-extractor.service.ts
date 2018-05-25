@@ -51,7 +51,8 @@ export class PersonExtractor {
         persons.push({
           name: name,
           image: image,
-          preload: (new Image().src = image) // creating a new JavaScript instance with target-src makes the browser preload the image
+          // preload: (new Image().src = image) // creating a new JavaScript instance with target-src makes the browser preload all images
+                                                // at once. Promotes image lagging for the currently visible images :(
         });
       }
     });
