@@ -11,8 +11,12 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1976d2">
 </head>
-<body>
-<app-root><div>Please, wait...</div></app-root>
+<body style="background-color: #1b1b2d;"> <!-- set color here to prevent view flipping on loading -->
+<app-root>
+  <section style="color: white; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif;">
+    <h2>Please wait...</h2>
+  </section>
+</app-root>
 <noscript>
   <h3 style="color: #673ab7; font-family: 'Helvetica Neue', sans-serif; margin: 2rem;">
     Sorry, but app is not available without javascript

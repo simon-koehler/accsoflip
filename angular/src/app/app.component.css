@@ -9,7 +9,6 @@ accso grey 1b1b2d
   color: white;
   text-align: center;
   padding: 20px;
-  background: #1b1b2d;
 }
 
 .center {
@@ -27,8 +26,4 @@ accso grey 1b1b2d
 
 h1 {
   margin-top: 0;
-}
-
-body {
-  padding: 20px;
 }
