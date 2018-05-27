@@ -10,8 +10,18 @@ export class PersonExtractor {
   constructor() {
   }
 
+  accsoPath = 'http://accso.de/app/uploads';
+  azureHttpsPath = 'https://accso-image-proxy.azurewebsites.net';
+
+  transformToHttpsProxy = (image: string | undefined) => {
+    if (!image) {
+      return image;
+    }
+    return image.replace(this.accsoPath, this.azureHttpsPath);
+  };
+
   /**
-   * Takes htmla and extracts persons of the format
+   * Takes html and extracts persons of the format
    *  <div class='staff' id="491">
    *    <div class='portrait'>
    *      <img src="http://accso.de/app/uploads/2016/04/Lastname-Firstname-Accso-Darmstadt.jpg" alt="Firstname Lastname">
@@ -41,18 +51,20 @@ export class PersonExtractor {
         </div>
       </div>
     */
-    $(virtualDom).find('div.staff').each((i, el) => {
+    $(virtualDom).find('div.staff').each((i: number, el) => {
       const image = $(el).find('img').attr('src');
       const name = $(el).find('div.name').text();
 
       if (image === placeholder) {
         console.log('Skipping ' + name + ' since s_he has no image yet.');
       } else {
+        const transformedImage = this.transformToHttpsProxy(image);
         persons.push({
           name: name,
-          image: image,
+          image: transformedImage,
+          preload: (new Image().src = transformedImage)
           // preload: (new Image().src = image) // creating a new JavaScript instance with target-src makes the browser preload all images
-                                                // at once. Promotes image lagging for the currently visible images :(
+          // at once. Promotes image lagging for the currently visible images :(
         });
       }
     });
