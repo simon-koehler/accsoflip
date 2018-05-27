@@ -10,14 +10,14 @@ export class PersonExtractor {
   constructor() {
   }
 
-  accsoPath = 'http://accso.de/app/uploads';
-  azureHttpsPath = 'https://accso-image-proxy.azurewebsites.net';
+  private accsoPath = 'http://accso.de/app/uploads';
+  private azureHttpsPath = 'https://accso-image-proxy.azurewebsites.net';
 
-  transformToHttpsProxy = (image: string | undefined) => {
-    if (!image) {
-      return image;
+  public transformToHttpsProxyUrl = (imageUrl: string | undefined) => {
+    if (!imageUrl) {
+      return imageUrl;
     }
-    return image.replace(this.accsoPath, this.azureHttpsPath);
+    return imageUrl.replace(this.accsoPath, this.azureHttpsPath);
   };
 
   /**
@@ -58,7 +58,7 @@ export class PersonExtractor {
       if (image === placeholder) {
         console.log('Skipping ' + name + ' since s_he has no image yet.');
       } else {
-        const transformedImage = this.transformToHttpsProxy(image);
+        const transformedImage = this.transformToHttpsProxyUrl(image);
         persons.push({
           name: name,
           image: transformedImage,
