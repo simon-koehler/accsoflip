@@ -3,6 +3,7 @@ import {AppComponent} from './app.component';
 import {FlipperComponent} from './flipper/flipper.component';
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
+import {InstallListenerComponent} from './install-listener/install-listener.component';
 
 class MockPageLoader {
 
@@ -20,7 +21,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        FlipperStubComponent
+        FlipperStubComponent,
+        InstallListenerComponent
       ],
     }).compileComponents();
   }));
