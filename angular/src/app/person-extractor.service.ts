@@ -36,6 +36,9 @@ export class PersonExtractor {
    * @returns {any[]}
    */
   public extract(html: string, placeholder: string): Person[] {
+    html = html.replace(/src=/gi, 'data-src=');
+    html = html.replace(/srcset=/gi, 'data-srcset=');
+
     const virtualDom = $('<virtual>').html(html)[0];
     const persons = [];
 
@@ -52,7 +55,7 @@ export class PersonExtractor {
       </div>
     */
     $(virtualDom).find('div.staff').each((i: number, el) => {
-      const image = $(el).find('img').attr('src');
+      const image = $(el).find('img').attr('data-src');
       const name = $(el).find('div.name').text();
 
       if (image === placeholder) {
@@ -62,8 +65,8 @@ export class PersonExtractor {
         persons.push({
           name: name,
           image: transformedImage,
-          preload: (new Image().src = transformedImage)
-          // preload: (new Image().src = image) // creating a new JavaScript instance with target-src makes the browser preload all images
+          //preload: (new Image().src = transformedImage)
+          // creating a new JavaScript instance with target-src makes the browser preload all images
           // at once. Promotes image lagging for the currently visible images :(
         });
       }

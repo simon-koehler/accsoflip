@@ -4,9 +4,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {FlipperComponent} from './flipper/flipper.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { InstallListenerComponent } from './install-listener/install-listener.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {InstallListenerComponent} from './install-listener/install-listener.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { InstallListenerComponent } from './install-listener/install-listener.co
   imports: [
     BrowserModule,
     HttpClientModule,
-    ServiceWorkerModule.register('/accsoflip/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('/accsoflip/ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]
