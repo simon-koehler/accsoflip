@@ -89,6 +89,8 @@ export class FlipperComponent implements OnInit {
   onLoad() {
     // remove opacity class => not opaque and remove the loading gif if the flip image is finished loading
     this.opaque = false;
-    this.showLoading = false;
+    if (this.image !== this.placeholder) {
+      this.showLoading = false;
+    }
   }
 }
