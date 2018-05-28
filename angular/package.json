@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build:gh": "ng build --prod --base-href \"https://simon-koehler.github.io/accsoflip/\"",
+    "build:azure": "ng build --prod --base-href \"https://accso-flip.azurewebsites.net/\"",
     "build:local": "ng build --prod --base-href \"http://locahost:4300/\"",
     "test": "ng test",
     "lint": "ng lint",
