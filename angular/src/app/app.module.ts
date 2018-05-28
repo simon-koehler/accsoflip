@@ -17,7 +17,7 @@ import {InstallListenerComponent} from './install-listener/install-listener.comp
   imports: [
     BrowserModule,
     HttpClientModule,
-    ServiceWorkerModule.register('/accsoflip/ngsw-worker.js', {enabled: environment.production}),
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]
