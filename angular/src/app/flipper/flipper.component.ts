@@ -15,7 +15,8 @@ export class FlipperComponent implements OnInit {
   }
 
   private people = Array<Person>();
-  private placeholder = this.personExtractor.transformToHttpsProxyUrl('http://accso.de/app/uploads/2016/04/Platzhalter.jpg');
+  private originalPlaceholder = 'http://accso.de/app/uploads/2016/04/Platzhalter.jpg';
+  private placeholder = this.personExtractor.transformToHttpsProxyUrl(this.originalPlaceholder);
   private currentPerson = new Person('Cody', this.placeholder); // for internal use. no bindings on it
 
   name = this.currentPerson.name; // for bindings. it is required that the name is not printed instantly when the currentPerson changes!
@@ -27,7 +28,7 @@ export class FlipperComponent implements OnInit {
     // call accso.de via no-cors-proxy
     const pageObservable = this.pageLoaderService.loadMenschenPage();
     pageObservable.subscribe((html: string) => {
-      this.people = this.personExtractor.extract(html, this.placeholder);
+      this.people = this.personExtractor.extract(html, this.originalPlaceholder); // take the original-placeholder!
 
       this.onFinishedLoading();
     });
