@@ -1,7 +1,7 @@
-<div (click)="onClick()" class="card {{frontVisible ? '' : 'flipped'}}">
+<div (click)="onClick()" class="card{{frontVisible ? '' : ' flipped'}}">
   <figure class="front">
-    <img class="picture" src="{{image}}"/>
-    <img class="loader" [hidden]="!showLoading" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"/>
+    <img class="picture{{opaque ? ' opaque' : ''}}" src="{{image}}" (load)="onLoad()" />
+    <img class="loader" [hidden]="!showLoading" src="https://media.giphy.com/media/xTkcEQACH24SMPxIQg/giphy.gif"/>
   </figure>
   <figure class="back">
     <div>{{name}}</div>

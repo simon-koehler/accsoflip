@@ -23,6 +23,7 @@ export class FlipperComponent implements OnInit {
   image = this.currentPerson.image; // for bindings
   frontVisible = true; // whether flipped or not
   showLoading = true;
+  opaque = false;
 
   ngOnInit() {
     // call accso.de via no-cors-proxy
@@ -48,15 +49,25 @@ export class FlipperComponent implements OnInit {
   onClick() {
     if (this.frontVisible) {
       this.setName();
+      // automatically load next image in background after flipping
+      setTimeout(() => {
+        this.loadNext();
+        this.setImage();
+      }, 500); // must equal the css transition duration
     } else {
-      this.loadNext();
-      this.setImage();
+      // if the user clicks on a flipper which shows a name and does not have loaded the image completely,
+      // set showLoading on true, to show the loading gif
+      // the loading gif always disappears, when the persons image is finished loading "onLoad"
+      if (this.opaque) {
+        this.showLoading = true;
+      }
     }
 
     this.frontVisible = !this.frontVisible;
   }
 
   private setImage() {
+    this.opaque = true;
     this.image = (this.currentPerson === null) ? this.placeholder : this.currentPerson.image;
   }
 
@@ -75,4 +86,9 @@ export class FlipperComponent implements OnInit {
     }
   }
 
+  onLoad() {
+    // remove opacity class => not opaque and remove the loading gif if the flip image is finished loading
+    this.opaque = false;
+    this.showLoading = false;
+  }
 }
