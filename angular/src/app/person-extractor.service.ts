@@ -12,12 +12,28 @@ export class PersonExtractor {
 
   private accsoPath = 'http://accso.de/app/uploads';
   private azureHttpsPath = 'https://accso-image-proxy.azurewebsites.net';
+  private smallerImageSuffix = '-480x408';
+  private jpgFileSuffix = '.jpg';
+  private pngFileSuffix = '.png';
 
   public transformToHttpsProxyUrl = (imageUrl: string | undefined) => {
     if (!imageUrl) {
       return imageUrl;
     }
     return imageUrl.replace(this.accsoPath, this.azureHttpsPath);
+  };
+
+  public transformToSmallerImageUrl = (imageUrl: string | undefined) => {
+    if (!imageUrl) {
+      return imageUrl;
+    }
+    if (imageUrl.indexOf(this.smallerImageSuffix) === -1) {
+      return imageUrl
+        .replace(this.jpgFileSuffix, this.smallerImageSuffix + this.jpgFileSuffix)
+        .replace(this.pngFileSuffix, this.smallerImageSuffix + this.pngFileSuffix);
+    } else {
+      return imageUrl;
+    }
   };
 
   /**
@@ -61,11 +77,11 @@ export class PersonExtractor {
       if (image === placeholder) {
         console.log('Skipping ' + name + ' since s_he has no image yet.');
       } else {
-        const transformedImage = this.transformToHttpsProxyUrl(image);
+        const transformedImage = this.transformToSmallerImageUrl(this.transformToHttpsProxyUrl(image));
         persons.push({
           name: name,
           image: transformedImage,
-          //preload: (new Image().src = transformedImage)
+          // preload: (new Image().src = transformedImage)
           // creating a new JavaScript instance with target-src makes the browser preload all images
           // at once. Promotes image lagging for the currently visible images :(
         });
