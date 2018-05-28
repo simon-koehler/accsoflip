@@ -15,15 +15,15 @@ export class FlipperComponent implements OnInit {
   }
 
   private people = Array<Person>();
-  private originalPlaceholder = 'http://accso.de/app/uploads/2016/04/Platzhalter.jpg';
-  private placeholder = this.personExtractor.transformToHttpsProxyUrl(this.originalPlaceholder);
+  private originalPlaceholder = 'http://accso.de/app/uploads/2016/04/Platzhalter.jpg'; // used to match persons without real image
+  private placeholder = this.personExtractor.transformToHttpsProxyUrl(this.originalPlaceholder); // used to actually print out on the screen
   private currentPerson = new Person('Cody', this.placeholder); // for internal use. no bindings on it
 
   name = this.currentPerson.name; // for bindings. it is required that the name is not printed instantly when the currentPerson changes!
   image = this.currentPerson.image; // for bindings
   frontVisible = true; // whether flipped or not
-  showLoading = true;
-  opaque = false;
+  showLoading = true; // whether the loading gif is shown or not
+  opaque = false; // whether the flipper image is opaque or not
 
   ngOnInit() {
     // call accso.de via no-cors-proxy
@@ -53,7 +53,7 @@ export class FlipperComponent implements OnInit {
       setTimeout(() => {
         this.loadNext();
         this.setImage();
-      }, 500); // must equal the css transition duration
+      }, 500); // must equal half of css transition duration
     } else {
       // if the user clicks on a flipper which shows a name and does not have loaded the image completely,
       // set showLoading on true, to show the loading gif
